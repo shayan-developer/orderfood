@@ -1,4 +1,6 @@
 import React from 'react'
+import Card from '../UI/Card'
+import MealItem from './MealItem'
 const data = [
     {
         id: 'm1',
@@ -26,10 +28,17 @@ const data = [
     },
 ]
 function AvailableMeals() {
+    const meals = data.map(meal => (
+        <MealItem
+            key={meal.id}
+            name={meal.name}
+            price={meal.price}
+            description={meal.description}
+        />))
     return (
-        <div>
-
-        </div>
+        <Card>
+            {meals}
+        </Card>
     )
 }
 

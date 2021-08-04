@@ -2,13 +2,13 @@ import React from 'react'
 import foodimage from "../../assets/food.jpg"
 import Button from '../UI/Button'
 import CartIcon from "../UI/CartIcon"
-function Header() {
+function Header({onShowModal}) {
     return (
         <>
             <header className="w-full flex justify-between p-3 bg-pink-500 text-white">
                 <h1 className="text-2xl">Food Order</h1>
                 <div className="flex w-44 items-center justify-between">
-                    <Button classes="flex-1 h-full">
+                    <Button classes="flex-1 h-full" onClick={onShowModal}>
                         Your cart
                     </Button>
                     <div className="flex mx-2">
