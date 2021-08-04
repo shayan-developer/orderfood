@@ -1,11 +1,17 @@
 import React from 'react'
 import foodimage from "../../assets/food.jpg"
+import { useStateValue } from '../Context/Store'
 import Button from '../UI/Button'
 import CartIcon from "../UI/CartIcon"
 function Header({onShowModal}) {
+    const [state]=useStateValue()
+    console.log(state);
+    const numberOfCart=state.cart.reduce((acc,cur)=>{
+        return acc+cur.amount
+    },0)
     return (
         <>
-            <header className="w-full flex justify-between p-3 bg-pink-500 text-white">
+            <header className="fixed top-0 z-10 w-full flex justify-between p-3 bg-pink-500 text-white">
                 <h1 className="text-2xl">Food Order</h1>
                 <div className="flex w-44 items-center justify-between">
                     <Button classes="flex-1 h-full" onClick={onShowModal}>
@@ -15,7 +21,7 @@ function Header({onShowModal}) {
                         <span className="w-8 ">
                         <CartIcon />
                         </span>
-                        <span className="mx-2 text-lg font-bold">0</span>
+                        <span className="mx-2 text-lg font-bold">{numberOfCart}</span>
                     </div>
                 </div>
             </header>
