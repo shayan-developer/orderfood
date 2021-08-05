@@ -9,7 +9,7 @@ const Backdrop = ({ onClick }) => {
 
 const ModalOverLay = ({ children }) => {
     return (
-        <div className="fixed top-1/4 z-30 w-10/12 left-1/2 transform -translate-x-2/4 -translate-y-2/4 rounded-2xl bg-white p-4">
+        <div className="fixed top-2/4 z-30 w-10/12 left-1/2 transform -translate-x-2/4 -translate-y-2/4 rounded-2xl bg-white p-4">
             {children}
         </div>
     )
