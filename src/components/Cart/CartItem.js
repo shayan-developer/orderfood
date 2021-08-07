@@ -35,8 +35,8 @@ function CartItem(item) {
                 </div>
             </div>
             <div className="flex items-center">
-                <Button onClick={removeHandler} classes="mx-2"> - </Button>
-                <Button onClick={addHandler}> + </Button>
+                <Button onClick={removeHandler} varient="outline" classes="mx-2"> - </Button>
+                <Button onClick={addHandler} varient="outline"> + </Button>
             </div>
         </div>
     )
