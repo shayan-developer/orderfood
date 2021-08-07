@@ -15,7 +15,7 @@ function MealItemForm(props) {
             return;
         }
         dispath({
-            type: "ADD",
+            type: "ADD_CART",
             payload: {
                 name: props.name,
                 description: props.description,

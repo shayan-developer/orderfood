@@ -13,7 +13,7 @@ function CartItem(item) {
     }
     const addHandler = () => {
         dispath({
-            type: "ADD",
+            type: "ADD_CART",
                 payload: {
                     name: item.name,
                     description: item.description,

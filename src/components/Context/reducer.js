@@ -1,12 +1,13 @@
 export const initailstate = {
     cart: [],
+    meals: [],
     total: 0
 }
 
 
 export const reducer = (state, action) => {
     switch (action.type) {
-        case "ADD":
+        case "ADD_CART":
             const isExist = state.cart.findIndex((item) => item.id === action.payload.id)
             let findedItem;
             isExist >= 0 ? findedItem = state.cart[isExist] : findedItem = null
@@ -23,6 +24,7 @@ export const reducer = (state, action) => {
             }
 
             return {
+                ...state,
                 cart: newArray,
                 total: state.total + action.payload.price * action.payload.amount
             }
@@ -42,10 +44,16 @@ export const reducer = (state, action) => {
                 updatedArr = [...state.cart]
                 updatedArr[isExistItem] = updatedItem
             }
-            const total =state.total-findedItemRemove.price
+            const total = state.total - findedItemRemove.price
             return {
-                cart:updatedArr,
+                ...state,
+                cart: updatedArr,
                 total
+            }
+        case "ADD_MEALS":
+            return {
+                ...state,
+                meals:action.payload
             }
         default:
             return state
